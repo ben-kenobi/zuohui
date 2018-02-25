@@ -20,7 +20,7 @@
     return [iPref(0) integerForKey:@"baseKey"];
 }
 
-//总人数
+//总人数，不包括会头，会头不参与标会
 +(void)setTotalNum:(NSInteger)totalNum{
     [iPref(0) setInteger:totalNum forKey:@"totalNumKey"];
     [iPref(0) synchronize];

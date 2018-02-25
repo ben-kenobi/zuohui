@@ -15,6 +15,7 @@
 @property (nonatomic,strong)UITextField *baseTf;
 @property (nonatomic,strong)UITextField *minBidTf;
 @property (nonatomic,strong)UITextField *timesPerMonthTf;
+@property (nonatomic,strong)UITextField *afterYearRate;
 @end
 
 @implementation ZHSettingVC
@@ -30,6 +31,7 @@
     self.baseTf.text=iFormatStr(@"%ld",ZHUtil.base);
     self.minBidTf.text=iFormatStr(@"%ld",ZHUtil.minBid);
     self.timesPerMonthTf.text=iFormatStr(@"%.1f",ZHUtil.timesPerMonth);
+    self.afterYearRate.text=iFormatStr(@"%.2f%%",ZHUtil.afterBidYearRate);
 }
 #pragma mark - actions
 -(void)save{
@@ -37,6 +39,7 @@
     [ZHUtil setBase: self.baseTf.text.integerValue];
     [ZHUtil setMinBid: self.minBidTf.text.integerValue];
     [ZHUtil setTimesPerMonth: self.timesPerMonthTf.text.floatValue];
+    [ZHUtil setAfterBidYearRate: self.afterYearRate.text.floatValue];
     [iNotiCenter postNotificationName:ON_BIDDING_SETTING_CHANGE object:nil];
     [UIViewController popVC];
 }
@@ -48,20 +51,23 @@
     self.view.backgroundColor=iGlobalBG;
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:iStr(@"保存") style:UIBarButtonItemStylePlain target:self action:@selector(save)];
     
-    UIView *totalBg,*baseBg,*minBidBg,*timesPerMonthBg;
+    UIView *totalBg,*baseBg,*minBidBg,*timesPerMonthBg,*afterYearRateBg;
     
     self.totalNumTf=[self tfWith:iStr(@"总共名额:") bg:&totalBg];
     self.baseTf=[self tfWith:iStr(@"每月金额:") bg:&baseBg];
     self.minBidTf=[self tfWith:iStr(@"期望标额:") bg:&minBidBg];
     self.timesPerMonthTf=[self tfWith:iStr(@"月标次数:") bg:&timesPerMonthBg];
+    self.afterYearRate=[self tfWith:iStr(@"预期年利:") bg:&afterYearRateBg];
+
     
     // layout -----
     [self.view addSubview:totalBg];
     [self.view addSubview:baseBg];
     [self.view addSubview:minBidBg];
     [self.view addSubview:timesPerMonthBg];
-    
-    CGFloat gap = 15,h=52;
+    [self.view addSubview:afterYearRateBg];
+
+    CGFloat gap = 15,h=50;
     [totalBg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@(h));
         make.centerX.equalTo(@0);
@@ -80,6 +86,10 @@
     [timesPerMonthBg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.centerX.width.equalTo(totalBg);
         make.bottom.equalTo(self.view.mas_top).offset((gap+h)*4);
+    }];
+    [afterYearRateBg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.centerX.width.equalTo(totalBg);
+        make.bottom.equalTo(self.view.mas_top).offset((gap+h)*5);
     }];
 }
 

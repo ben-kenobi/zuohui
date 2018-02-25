@@ -25,4 +25,8 @@
 //每月竞标次数
 +(void)setTimesPerMonth:(CGFloat)timesPerMonth;
 +(CGFloat)timesPerMonth;
+
+//标出后的资金预期年利率
++(void)setAfterBidYearRate:(CGFloat)afterBidYearRate;
++(CGFloat)afterBidYearRate;
 @end

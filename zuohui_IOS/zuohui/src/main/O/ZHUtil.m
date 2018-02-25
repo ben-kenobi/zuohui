@@ -47,4 +47,13 @@
     return [iPref(0) floatForKey:@"timesPerMonthKey"];
 }
 
+//标出后的资金预期年利率
++(void)setAfterBidYearRate:(CGFloat)afterBidYearRate{
+    [iPref(0) setFloat:afterBidYearRate forKey:@"afterBidYearRateKey"];
+    [iPref(0) synchronize];
+}
++(CGFloat)afterBidYearRate{
+    return [iPref(0) floatForKey:@"afterBidYearRateKey"];
+}
+
 @end

@@ -26,13 +26,19 @@
     self.biddingTf.placeholder=iFormatStr(@"%ld",self.mod.minBid);
     
     NSString *totalOutcome = iFormatStr(@"%ld",_mod.totalOutcome);
-    NSString *totalIncome = iFormatStr(@"%ld",_mod.totalIncome);
-    NSString *yearRate = iFormatStr(@"%.3f%%",_mod.yearInteresteRate*100+.00049);
+    NSString *totalIncome = iFormatStr(@"%ld | %ld",_mod.totalIncome,_mod.finalTotalIncome);
+    NSString *yearRate = iFormatStr(@"%.3f%% | %.3f%%",_mod.yearInteresteRate*100+.00049,_mod.finalInteresteRate*100+.00049);
     NSString *sumStr = iFormatStr(@"总支出：%@\n总收入：%@\n年利率：%@",totalOutcome,totalIncome,yearRate);
     NSMutableAttributedString *astr = [[NSMutableAttributedString alloc]initWithString: sumStr];
     [astr addAttribute:NSForegroundColorAttributeName value:iColor(0xee, 0x88, 0x88, 1) range:NSMakeRange([sumStr rangeOfString:@"总支出："].location+4, totalOutcome.length)];
-    [astr addAttribute:NSForegroundColorAttributeName value:iColor(0x88, 0xee, 0x88, 1) range:NSMakeRange([sumStr rangeOfString:@"总收入："].location+4, totalIncome.length)];
-    [astr addAttribute:NSForegroundColorAttributeName value:iColor(0x88, 0x88, 0xee, 1) range:NSMakeRange([sumStr rangeOfString:@"年利率："].location+4, yearRate.length)];
+    
+    NSInteger totalIncomeMidIdx=[totalIncome rangeOfString:@"|"].location;
+    [astr addAttribute:NSForegroundColorAttributeName value:iColor(0x88, 0xee, 0x88, 1) range:NSMakeRange([sumStr rangeOfString:@"总收入："].location+4, totalIncomeMidIdx)];
+    [astr addAttribute:NSForegroundColorAttributeName value:iColor(0x33, 0xbb, 0x33, 1) range:NSMakeRange([sumStr rangeOfString:@"总收入："].location+4+totalIncomeMidIdx+1, totalIncome.length-totalIncomeMidIdx-1)];
+    
+    NSInteger rateMidIdx=[yearRate rangeOfString:@"|"].location;
+    [astr addAttribute:NSForegroundColorAttributeName value:iColor(0x88, 0x88, 0xee, 1) range:NSMakeRange([sumStr rangeOfString:@"年利率："].location+4, rateMidIdx)];
+    [astr addAttribute:NSForegroundColorAttributeName value:iColor(0x33, 0x33, 0xbb, 1) range:NSMakeRange([sumStr rangeOfString:@"年利率："].location+4+rateMidIdx+1,yearRate.length-rateMidIdx-1)];
     self.summary.attributedText=astr;
 
 }
@@ -83,7 +89,7 @@
         make.centerY.equalTo(@0);
         make.leading.equalTo(@50);
         make.height.equalTo(@50);
-        make.width.equalTo(@(dp2po(146)));
+        make.width.equalTo(@(dp2po(120)));
     }];
     [self.summary mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.biddingTf.mas_trailing).offset(15);

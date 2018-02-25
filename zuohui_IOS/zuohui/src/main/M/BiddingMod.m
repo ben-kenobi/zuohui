@@ -49,7 +49,10 @@
     
     self.yearInteresteRate=(self.totalIncome-self.totalOutcome)*12.0*self.vm->timesPerMonth/self.vm->totalCount/self.totalOutcome*2.0;
     
- 
+    //剩余年数
+    CGFloat leftYear = leftNum/(12.0*self.vm->timesPerMonth);
+    self.finalTotalIncome=self.totalIncome*(1+self.vm->afterBidYearRate*leftYear);
+     self.finalInteresteRate=(self.finalTotalIncome-self.totalOutcome)*12.0*self.vm->timesPerMonth/self.vm->totalCount/self.totalOutcome*2.0;
 }
 //已经支出的数额
 -(NSInteger)formerOutcome{

@@ -11,11 +11,11 @@
 @interface BiddingVM : NSObject
 {@public
     NSInteger base,minBid,totalCount;
-    CGFloat timesPerMonth;
+    CGFloat timesPerMonth,afterBidYearRate;
     
 }
 @property (nonatomic,strong)NSMutableDictionary<NSString *,NSNumber *> *bidRecordDict;
-+(instancetype)vmWith:(NSInteger)base total:(NSInteger)total min:(NSInteger)min times:(CGFloat)times;
++(instancetype)vmWith:(NSInteger)base total:(NSInteger)total min:(NSInteger)min times:(CGFloat)times afterBidYearRate:(CGFloat)afterBidYearRate;
 -(NSInteger)row;
 -(BiddingMod *)modBy:(NSIndexPath *)idxpath;
 -(void)updateBidPrice:(BiddingMod *)mod;

@@ -36,7 +36,7 @@ static NSString *celliden = @"celliden";
 
 }
 -(void)loadData{
-    self.vm = [BiddingVM vmWith:ZHUtil.base total:ZHUtil.totalNum min:ZHUtil.minBid times:ZHUtil.timesPerMonth];
+    self.vm = [BiddingVM vmWith:ZHUtil.base total:ZHUtil.totalNum min:ZHUtil.minBid times:ZHUtil.timesPerMonth afterBidYearRate:ZHUtil.afterBidYearRate*.01];
     [self.tv reloadData];
     [self updateLeftBarBtn];
 }

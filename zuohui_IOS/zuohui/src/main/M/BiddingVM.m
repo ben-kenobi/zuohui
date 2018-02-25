@@ -16,12 +16,13 @@ static NSString *bidRecordKey=@"bidRecordKey";
 @end
 
 @implementation BiddingVM
-+(instancetype)vmWith:(NSInteger)base total:(NSInteger)total min:(NSInteger)min times:(CGFloat)times{
++(instancetype)vmWith:(NSInteger)base total:(NSInteger)total min:(NSInteger)min times:(CGFloat)times afterBidYearRate:(CGFloat)afterBidYearRate;{
     BiddingVM *vm = [[BiddingVM alloc]init];
     vm->base=base;
     vm->minBid=min;
     vm->totalCount=total;
     vm->timesPerMonth=times;
+    vm->afterBidYearRate=afterBidYearRate;
     vm.bidRecordDict=[NSMutableDictionary dictionaryWithDictionary:[iPref(0) dictionaryForKey:bidRecordKey]];
     return vm;
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		32262A44E81552AFA1894445 /* Pods_zuohui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC5A3E2030B191481C5E7E5 /* Pods_zuohui.framework */; };
+		B816EAE1212ACC1D00EB5C58 /* BCScheduleSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B816EAE0212ACC1D00EB5C58 /* BCScheduleSettingsVC.m */; };
+		B816EAE4212AD06300EB5C58 /* BiddingScheduleMod.m in Sources */ = {isa = PBXBuildFile; fileRef = B816EAE3212AD06300EB5C58 /* BiddingScheduleMod.m */; };
 		B85975052040008D003E2FBF /* ZHSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B85975042040008D003E2FBF /* ZHSettingVC.m */; };
 		B85975082040020D003E2FBF /* ZHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B85975072040020D003E2FBF /* ZHUtil.m */; };
 		B8F2B39B203EC1AE003E2F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F2B2D2203EC1AE003E2F27 /* Assets.xcassets */; };
@@ -116,6 +118,10 @@
 		51E0E852498DA0C3519D0F95 /* Pods-zuohui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zuohui.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zuohui/Pods-zuohui.debug.xcconfig"; sourceTree = "<group>"; };
 		8FC5A3E2030B191481C5E7E5 /* Pods_zuohui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zuohui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55A55B63D24492DF8A7283C /* Pods-zuohui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zuohui.release.xcconfig"; path = "Pods/Target Support Files/Pods-zuohui/Pods-zuohui.release.xcconfig"; sourceTree = "<group>"; };
+		B816EADF212ACC1D00EB5C58 /* BCScheduleSettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCScheduleSettingsVC.h; sourceTree = "<group>"; };
+		B816EAE0212ACC1D00EB5C58 /* BCScheduleSettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCScheduleSettingsVC.m; sourceTree = "<group>"; };
+		B816EAE2212AD06300EB5C58 /* BiddingScheduleMod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BiddingScheduleMod.h; sourceTree = "<group>"; };
+		B816EAE3212AD06300EB5C58 /* BiddingScheduleMod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BiddingScheduleMod.m; sourceTree = "<group>"; };
 		B85975032040008D003E2FBF /* ZHSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHSettingVC.h; sourceTree = "<group>"; };
 		B85975042040008D003E2FBF /* ZHSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHSettingVC.m; sourceTree = "<group>"; };
 		B85975062040020D003E2FBF /* ZHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHUtil.h; sourceTree = "<group>"; };
@@ -731,6 +737,8 @@
 				B8F2B40B203ECCE8003E2F27 /* BiddingMod.m */,
 				B8F2B40D203ECCF4003E2F27 /* BiddingVM.h */,
 				B8F2B40E203ECCF4003E2F27 /* BiddingVM.m */,
+				B816EAE2212AD06300EB5C58 /* BiddingScheduleMod.h */,
+				B816EAE3212AD06300EB5C58 /* BiddingScheduleMod.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -746,6 +754,8 @@
 				B8F2B3FF203EC26A003E2F27 /* ZHMainVC.m */,
 				B85975032040008D003E2FBF /* ZHSettingVC.h */,
 				B85975042040008D003E2FBF /* ZHSettingVC.m */,
+				B816EADF212ACC1D00EB5C58 /* BCScheduleSettingsVC.h */,
+				B816EAE0212ACC1D00EB5C58 /* BCScheduleSettingsVC.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -913,6 +923,7 @@
 				B8F2B3A9203EC1AE003E2F27 /* YFConst.m in Sources */,
 				B85975082040020D003E2FBF /* ZHUtil.m in Sources */,
 				B8F2B3B2203EC1AE003E2F27 /* MASViewAttribute.m in Sources */,
+				B816EAE4212AD06300EB5C58 /* BiddingScheduleMod.m in Sources */,
 				B8F2B3B5203EC1AE003E2F27 /* SVIndefiniteAnimatedView.m in Sources */,
 				B8F2B3AE203EC1AE003E2F27 /* NSArray+MASAdditions.m in Sources */,
 				B8F2B3CE203EC1AE003E2F27 /* BCStyleSheetMod.m in Sources */,
@@ -921,6 +932,7 @@
 				B85975052040008D003E2FBF /* ZHSettingVC.m in Sources */,
 				B8F2B3E3203EC1AE003E2F27 /* UIButton+WebCache.m in Sources */,
 				B8F2B3E9203EC1AE003E2F27 /* MyMD5.m in Sources */,
+				B816EAE1212ACC1D00EB5C58 /* BCScheduleSettingsVC.m in Sources */,
 				B8F2B3AB203EC1AE003E2F27 /* MASCompositeConstraint.m in Sources */,
 				B8F2B3E5203EC1AE003E2F27 /* NSArray+Ex.m in Sources */,
 				B8F2B3D8203EC1AE003E2F27 /* UIImageView+HighlightedWebCache.m in Sources */,

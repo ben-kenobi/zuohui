@@ -10,6 +10,7 @@
 #import "BiddingVM.h"
 @interface BiddingMod : NSObject
 @property (nonatomic,assign)NSInteger idx;
+@property (nonatomic,strong)NSString *dateTitle;
 @property (nonatomic,assign)NSInteger bidPrice;
 @property (nonatomic,assign)NSInteger totalOutcome;
 @property (nonatomic,assign)NSInteger totalIncome;

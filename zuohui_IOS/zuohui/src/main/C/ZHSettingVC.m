@@ -43,6 +43,9 @@
     [iNotiCenter postNotificationName:ON_BIDDING_SETTING_CHANGE object:nil];
     [UIViewController popVC];
 }
+-(void)toCustTime:(id)sender{
+    
+}
 
 
 #pragma mark - UI
@@ -58,7 +61,12 @@
     self.minBidTf=[self tfWith:iStr(@"期望标额:") bg:&minBidBg];
     self.timesPerMonthTf=[self tfWith:iStr(@"月标次数:") bg:&timesPerMonthBg];
     self.afterYearRate=[self tfWith:iStr(@"预期年利:") bg:&afterYearRateBg];
-
+    self.timesPerMonthTf.rightViewMode=UITextFieldViewModeAlways;
+    UIButton *btn = [IProUtil commonTextBtn:iFont(dp2po(16)) color:iGlobalFocusColor title:iStr(@"自定义")];
+    btn.contentEdgeInsets=UIEdgeInsetsMake(8, 8, 8, 8);
+    [btn sizeToFit];
+    self.timesPerMonthTf.rightView=btn;
+    [btn addTarget:self action:@selector(toCustTime:) forControlEvents:UIControlEventTouchUpInside];
     
     // layout -----
     [self.view addSubview:totalBg];

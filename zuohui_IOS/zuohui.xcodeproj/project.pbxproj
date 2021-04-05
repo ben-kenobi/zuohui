@@ -17,7 +17,6 @@
 		B8F2B3A0203EC1AE003E2F27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2B2DC203EC1AE003E2F27 /* main.m */; };
 		B8F2B3A1203EC1AE003E2F27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2B2DD203EC1AE003E2F27 /* AppDelegate.m */; };
 		B8F2B3A2203EC1AE003E2F27 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B8F2B2DE203EC1AE003E2F27 /* Podfile */; };
-		B8F2B3A3203EC1AE003E2F27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8F2B2E0203EC1AE003E2F27 /* Info.plist */; };
 		B8F2B3A4203EC1AE003E2F27 /* mystring.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8F2B2E1203EC1AE003E2F27 /* mystring.strings */; };
 		B8F2B3A5203EC1AE003E2F27 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B8F2B2E3203EC1AE003E2F27 /* LICENSE */; };
 		B8F2B3A6203EC1AE003E2F27 /* license in Resources */ = {isa = PBXBuildFile; fileRef = B8F2B2E6203EC1AE003E2F27 /* license */; };
@@ -33,7 +32,6 @@
 		B8F2B3B0203EC1AE003E2F27 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2B302203EC1AE003E2F27 /* MASConstraint.m */; };
 		B8F2B3B1203EC1AE003E2F27 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2B303203EC1AE003E2F27 /* MASViewConstraint.m */; };
 		B8F2B3B2203EC1AE003E2F27 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2B304203EC1AE003E2F27 /* MASViewAttribute.m */; };
-		B8F2B3B3203EC1AE003E2F27 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8F2B305203EC1AE003E2F27 /* Info.plist */; };
 		B8F2B3B4203EC1AE003E2F27 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2B30A203EC1AE003E2F27 /* SVProgressHUD.m */; };
 		B8F2B3B5203EC1AE003E2F27 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2B30B203EC1AE003E2F27 /* SVIndefiniteAnimatedView.m */; };
 		B8F2B3B6203EC1AE003E2F27 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B8F2B30C203EC1AE003E2F27 /* SVProgressHUD.bundle */; };
@@ -830,8 +828,6 @@
 				B8F2B3A8203EC1AE003E2F27 /* README.markdown in Resources */,
 				B8F2B3B7203EC1AE003E2F27 /* README.md in Resources */,
 				B8F2B3A2203EC1AE003E2F27 /* Podfile in Resources */,
-				B8F2B3A3203EC1AE003E2F27 /* Info.plist in Resources */,
-				B8F2B3B3203EC1AE003E2F27 /* Info.plist in Resources */,
 				B8F2B39D203EC1AE003E2F27 /* LaunchScreen.storyboard in Resources */,
 				B8F2B3B6203EC1AE003E2F27 /* SVProgressHUD.bundle in Resources */,
 			);
@@ -1107,7 +1103,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6U96F6BXWV;
+				DEVELOPMENT_TEAM = Q3Z23BVZ93;
 				GCC_PREFIX_HEADER = zuohui/IOS_OC_BASIC/conf/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/zuohui/info/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10;
@@ -1124,7 +1120,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6U96F6BXWV;
+				DEVELOPMENT_TEAM = Q3Z23BVZ93;
 				GCC_PREFIX_HEADER = zuohui/IOS_OC_BASIC/conf/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/zuohui/info/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10;

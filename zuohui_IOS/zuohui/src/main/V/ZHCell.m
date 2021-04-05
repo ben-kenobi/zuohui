@@ -21,7 +21,8 @@
 }
 -(void)updateUI{
     self.backgroundColor=(_mod.idx%2)?[UIColor whiteColor]:iColor(0xff, 0xfa, 0xf0, 1);
-    self.idxLab.text=iFormatStr(@"%ld",self.mod.idx+1);
+//    self.idxLab.text=iFormatStr(@"%ld",self.mod.idx+1);
+    self.idxLab.text=_mod.dateTitle;
     self.biddingTf.text=_mod.bidPrice>0?iFormatStr(@"%ld",self.mod.bidPrice):@"";
     self.biddingTf.placeholder=iFormatStr(@"%ld",self.mod.minBid);
     
@@ -64,7 +65,8 @@
 }
 
 -(void)initUI{
-    self.idxLab=[IProUtil commonLab:iBFont(18) color:[UIColor blackColor]];
+    self.idxLab=[IProUtil commonLab:iBFont(12) color:[UIColor blackColor]];
+    self.idxLab.numberOfLines=0;
     self.biddingTf=[[YFClearableTF alloc]init];
     self.summary=[IProUtil commonLab:iFont(dp2po(14)) color:[UIColor darkGrayColor]];
     self.summary.numberOfLines=0;
@@ -87,9 +89,9 @@
     }];
     [self.biddingTf mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(@0);
-        make.leading.equalTo(@50);
+        make.leading.equalTo(@68);
         make.height.equalTo(@50);
-        make.width.equalTo(@(dp2po(120)));
+        make.width.equalTo(@(dp2po(100)));
     }];
     [self.summary mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.biddingTf.mas_trailing).offset(15);

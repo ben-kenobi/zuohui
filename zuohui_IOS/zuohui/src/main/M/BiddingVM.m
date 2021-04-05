@@ -9,14 +9,16 @@
 
 #import "BiddingVM.h"
 #import "BiddingMod.h"
+#import "BiddingScheduleMod.h"
 
 static NSString *bidRecordKey=@"bidRecordKey";
 @interface BiddingVM()
+@property (nonatomic,strong)BiddingScheduleMod *scheduleMod;
 
 @end
 
 @implementation BiddingVM
-+(instancetype)vmWith:(NSInteger)base total:(NSInteger)total min:(NSInteger)min times:(CGFloat)times afterBidYearRate:(CGFloat)afterBidYearRate;{
++(instancetype)vmWith:(NSInteger)base total:(NSInteger)total min:(NSInteger)min times:(CGFloat)times afterBidYearRate:(CGFloat)afterBidYearRate{
     BiddingVM *vm = [[BiddingVM alloc]init];
     vm->base=base;
     vm->minBid=min;
@@ -24,6 +26,7 @@ static NSString *bidRecordKey=@"bidRecordKey";
     vm->timesPerMonth=times;
     vm->afterBidYearRate=afterBidYearRate;
     vm.bidRecordDict=[NSMutableDictionary dictionaryWithDictionary:[iPref(0) dictionaryForKey:bidRecordKey]];
+    vm.scheduleMod=[BiddingScheduleMod savedScheduleMod];
     return vm;
 }
 
@@ -34,6 +37,7 @@ static NSString *bidRecordKey=@"bidRecordKey";
     NSInteger row = idxpath.row;
     BiddingMod *mod = [[BiddingMod alloc]init];
     mod.idx=row;
+    mod.dateTitle=[self.scheduleMod descBy:row+1];//月数从1开始算
     mod.vm=self;
     return mod;
 }
